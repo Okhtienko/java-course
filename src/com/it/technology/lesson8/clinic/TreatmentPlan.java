@@ -10,5 +10,4 @@ public class TreatmentPlan {
     public int getKey() {
         return key;
     }
-
 }

@@ -5,9 +5,10 @@ public class Surgeon extends Person implements Treatable {
                    String firstName,
                    String lastName,
                    String gender,
-                   int age)
+                   int age,
+                   String position)
     {
-        super(idPerson, firstName, lastName, gender, age);
+        super(idPerson, firstName, lastName, gender, age, position);
     }
 
     public Surgeon(Person surgeon) {
@@ -15,21 +16,22 @@ public class Surgeon extends Person implements Treatable {
                 surgeon.getFirstName(),
                 surgeon.getLastName(),
                 surgeon.getGender(),
-                surgeon.getAge());
+                surgeon.getAge(),
+                surgeon.getPosition());
     }
 
     @Override
     public String getInformation() {
-        StringBuilder personalMatter = new StringBuilder("Surgeon\n");
-        personalMatter.append(getFirstName() + " ");
-        personalMatter.append(getLastName() + "\n");
-        personalMatter.append("Gender: " + getGender() + "\n");
-        personalMatter.append("Age: " + getAge() + "\n");
-        return personalMatter.toString();
+        String personalMatter = "The doctor's personal file:\n" + getFirstName() + " " +
+                getLastName() + "\n" +
+                "Gender: " + getGender() + "\n" +
+                "Age: " + getAge() + "\n" +
+                "Position: " + getPosition() + "\n";
+        return personalMatter;
     }
 
     @Override
     public void treat() {
-        System.out.println("Treatment of fractures and bone cracks of all types");
+        System.out.println("Treatment of fractures and bone cracks of all types\n");
     }
 }

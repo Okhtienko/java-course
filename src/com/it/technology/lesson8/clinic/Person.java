@@ -6,6 +6,22 @@ public abstract class Person {
     private String lastName;
     private String gender;
     private int age;
+    private String position;
+
+    public Person(int idPerson,
+                  String firstName,
+                  String lastName,
+                  String gender,
+                  int age,
+                  String position)
+    {
+        this.idPerson = idPerson;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.age = age;
+        this.position = position;
+    }
 
     public Person(int idPerson,
                   String firstName,
@@ -18,14 +34,6 @@ public abstract class Person {
         this.lastName = lastName;
         this.gender = gender;
         this.age = age;
-    }
-
-    public Person(Person person) {
-        this.idPerson = person.idPerson;
-        this.firstName = person.firstName;
-        this.lastName = person.lastName;
-        this.gender = person.gender;
-        this.age = person.age;
     }
 
     public int getIdPerson() {
@@ -46,6 +54,10 @@ public abstract class Person {
 
     public int getAge() {
         return age;
+    }
+
+    public String getPosition() {
+        return position;
     }
 
     public abstract String getInformation();

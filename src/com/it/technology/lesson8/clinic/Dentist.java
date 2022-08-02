@@ -5,9 +5,10 @@ public class Dentist extends Person implements Treatable {
                    String firstName,
                    String lastName,
                    String gender,
-                   int age)
+                   int age,
+                   String position)
     {
-        super(idPerson, firstName, lastName, gender, age);
+        super(idPerson, firstName, lastName, gender, age, position);
     }
 
     public Dentist(Person dentist) {
@@ -15,21 +16,22 @@ public class Dentist extends Person implements Treatable {
                 dentist.getFirstName(),
                 dentist.getLastName(),
                 dentist.getGender(),
-                dentist.getAge());
+                dentist.getAge(),
+                dentist.getPosition());
     }
 
     @Override
     public String getInformation() {
-        StringBuilder personalMatter = new StringBuilder("Dentist:\n");
-        personalMatter.append(getFirstName() + " ");
-        personalMatter.append(getLastName() + "\n");
-        personalMatter.append("Gender: " + getGender() + "\n");
-        personalMatter.append("Age: " + getAge() + "\n");
-        return personalMatter.toString();
+        String personalMatter = "The doctor's personal file:\n" + getFirstName() + " " +
+                getLastName() + "\n" +
+                "Gender: " + getGender() + "\n" +
+                "Age: " + getAge() + "\n" +
+                "Position: " + getPosition() + "\n";
+        return personalMatter;
     }
 
     @Override
     public void treat() {
-        System.out.println("Filling of shallow caries without complications");
+        System.out.println("Filling of shallow caries without complications\n");
     }
 }

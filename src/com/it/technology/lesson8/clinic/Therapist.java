@@ -5,23 +5,33 @@ public class Therapist extends Person implements Treatable {
                      String firstName,
                      String lastName,
                      String gender,
-                     int age)
+                     int age,
+                     String position)
     {
-        super(idPerson, firstName, lastName, gender, age);
+        super(idPerson, firstName, lastName, gender, age, position);
+    }
+
+    public Therapist(Person therapist) {
+        super(therapist.getIdPerson(),
+                therapist.getFirstName(),
+                therapist.getLastName(),
+                therapist.getGender(),
+                therapist.getAge(),
+                therapist.getPosition());
     }
 
     @Override
     public String getInformation() {
-        StringBuilder personalMatter = new StringBuilder("Therapist\n");
-        personalMatter.append(getFirstName() + " ");
-        personalMatter.append(getLastName() + "\n");
-        personalMatter.append("Gender: " + getGender() + "\n");
-        personalMatter.append("Age: " + getAge() + "\n");
-        return personalMatter.toString();
+        String personalMatter = "The doctor's personal file:\n" + getFirstName() + " " +
+                getLastName() + "\n" +
+                "Gender: " + getGender() + "\n" +
+                "Age: " + getAge() + "\n" +
+                "Position: " + getPosition() + "\n";
+        return personalMatter;
     }
 
     @Override
     public void treat() {
-        System.out.println("Treatment of acute respiratory viral infections");
+        System.out.println("Treatment of acute respiratory viral infections\n");
     }
 }

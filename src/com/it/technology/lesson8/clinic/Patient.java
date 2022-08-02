@@ -17,10 +17,6 @@ public class Patient extends Person {
         this.keyPlan = keyPlan;
     }
 
-    public boolean isSick() {
-        return isSick;
-    }
-
     public TreatmentPlan getKeyPlan() {
         return keyPlan;
     }
@@ -38,12 +34,11 @@ public class Patient extends Person {
 
     @Override
     public String getInformation() {
-        StringBuilder personalMatter = new StringBuilder("Patient\n");
-        personalMatter.append(getFirstName() + " ");
-        personalMatter.append(getLastName() + "\n");
-        personalMatter.append("Gender: " + getGender() + "\n");
-        personalMatter.append("Age: " + getAge() + "\n");
-        personalMatter.append("Sick: " + isStickPerson() + "\n");
-        return personalMatter.toString();
+        String personalMatter = "The patient's personal file:\n" + getFirstName() + " " +
+                getLastName() + "\n" +
+                "Gender: " + getGender() + "\n" +
+                "Age: " + getAge() + "\n" +
+                "Sick: " + isStickPerson();
+        return personalMatter;
     }
 }
