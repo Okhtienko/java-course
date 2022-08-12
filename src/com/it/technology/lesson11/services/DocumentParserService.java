@@ -34,12 +34,12 @@ public final class DocumentParserService {
         return true;
     }
 
-    public static void isStringValid(Text text, final String subsequence) {
+    public static void isDocumentNumberValid(Text text, final String subsequence) {
         try {
             checkDocumentNumberStartWithSequence(text, subsequence);
             checkDocumentNumberContainsSequence(text, subsequence);
             checkDocumentNumberEndsWithSequence(text, subsequence);
-            System.out.println("String is valid"  + subsequence);
+            System.out.println("Document number is valid"  + subsequence);
         } catch (WrongStartSubsequenceException | WrongSubsequenceException | WrongEndSubsequenceException e) {
             e.printStackTrace();
         }

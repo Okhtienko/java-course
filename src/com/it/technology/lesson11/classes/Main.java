@@ -21,7 +21,7 @@ public class Main {
         Text text = new Text();
         text.setText(documentNumber);
 
-        DocumentParserService.isStringValid(text, "5555");
+        DocumentParserService.isDocumentNumberValid(text, "5555");
 
         System.out.print("\n##########Task2##########\n");
 
