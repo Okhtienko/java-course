@@ -1,0 +1,5 @@
+docnum12345678910 - the document number does not start with docnum/contract sequences, or the length of the number is short/exceeds 15 characters.
+contract-12345678 - the document number does not start with docnum/contract sequences, or the length of the number is short/exceeds 15 characters.
+DocnumNumber - the document number does not start with docnum/contract sequences, or the length of the number is short/exceeds 15 characters.
+contract789contract - the document number does not start with docnum/contract sequences, or the length of the number is short/exceeds 15 characters.
+docnumContract12345 - the document number does not start with docnum/contract sequences, or the length of the number is short/exceeds 15 characters.
