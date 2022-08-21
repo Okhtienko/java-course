@@ -13,6 +13,7 @@ public final class DateService {
         DayOfWeek dayOfWeek = DayOfWeek.from(localDate);
         return dayOfWeek.name().toLowerCase();
     }
+
     public String findNextTuesdayDate(LocalDate date) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         return formatter.format(date.with(TemporalAdjusters.next(DayOfWeek.TUESDAY)));
